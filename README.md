@@ -24,3 +24,5 @@ Verktyg:
 - NODE
 - Vue CLI 
 - SPA
+- Vue Toaster
+
