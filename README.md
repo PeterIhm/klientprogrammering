@@ -6,10 +6,10 @@ Vyer:
 - Area
 
 Arbetet:
-Peter - design / UX (Hur kommer den olika tre vyer se ut? Vilka knappar / sökfält behöver vi?)
-Sebastian - JSON object, vilka atributer ska vi använda oss av
-Aoife - Geolocation 
-Elske - Services
+- Peter - design / UX (Hur kommer den olika tre vyer se ut? Vilka knappar / sökfält behöver vi?)
+- Sebastian - JSON object, vilka atributer ska vi använda oss av
+- Aoife - Geolocation 
+- Elske - Services
 
 To do:
 - Felhantering Geolocation
@@ -21,6 +21,6 @@ To do:
 - Enhetstester
 
 Verktyg:
-NODE
-Vue CLI 
-SPA
+- NODE
+- Vue CLI 
+- SPA
