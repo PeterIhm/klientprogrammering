@@ -6,7 +6,11 @@ function getEventsNearby(url) {
         }
         return resp.json()
     })
-    .then (json => console.log(json)/*json.map(h => h.handelse)*/)
+    .then (json => {
+        console.log(json.data)
+        console.log(json.data[0])
+   }
+    /*json.map(h => h.handelse)*/)
 }
 
 const BrottsplatsService = {
