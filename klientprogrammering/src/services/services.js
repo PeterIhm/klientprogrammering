@@ -47,7 +47,6 @@ const BrottsplatsService = {
     eventsNearby: () => getEventsNearby('https://brottsplatskartan.se/api/eventsNearby?lat=57.70&lng=11.96'),
     eventsByLocation: () => getEventsByLocation('https://brottsplatskartan.se/api/events/?location=göteborg'),
     eventsByArea: () => getEventsByArea('https://brottsplatskartan.se/api/events/?area=västra götalands län')
-
 }
 Object.freeze(BrottsplatsService)
 
