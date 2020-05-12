@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
     <main>
-      <div class="search-box"> 
+      <div class="search-box">
         <input type="text" class="search-bar" placeholder="Search..." />
 
         <select class="search-dropdown">
@@ -29,7 +29,6 @@ export default {
     }
   }
 }*/
-
 </script>
 
 <style>
@@ -39,40 +38,44 @@ export default {
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'montserrat', sans-serif;
+body {
+  font-family: "montserrat", sans-serif;
 }
 
-#app{
-  background-image: url('./assets/City.jpg'); /* lägg till backgroundbild */
+#app {
+  background-image: url("./assets/City.jpg"); /* lägg till backgroundbild */
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
 }
 
-main{
+main {
   min-height: 100vh;
   padding: 25px; /* change <--- not px*/
 
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,075));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 075)
+  );
 }
 
-/*!Search box/bar*/ 
+/*!Search box/bar*/
 
-.search-box{
+.search-box {
   width: 50%;
   margin-bottom: 30px;
 }
 
-.search-box .search-bar{
+.search-box .search-bar {
   width: 45%;
   padding: 15px;
   color: #313131;
   font-size: 20px;
   text-overflow: clip;
   appearance: none;
-  border:none;
-  outline:none;
+  border: none;
+  outline: none;
   background: none;
 
   background-color: rgb(255, 255, 255);
@@ -80,10 +83,10 @@ main{
   transition: 0.4s;
 }
 
-/*!Search Dropdown*/ 
+/*!Search Dropdown*/
 
-.search-box .search-dropdown{
-  overflow:hidden;
+.search-box .search-dropdown {
+  overflow: hidden;
   font-size: 20px;
   width: 30%;
   border-color: rgb(255, 255, 255);
@@ -93,9 +96,9 @@ main{
 
 /*!Search Button*/
 
-.search-box .search-button{
-  overflow:hidden;
-  background-color: rgb(255, 255, 255);  
+.search-box .search-button {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
   width: 25%;
   min-height: 5.1ex;
   border-radius: 0px 16px 16px 0px;
@@ -108,14 +111,9 @@ main{
 }
 
 @media only screen and (max-width: 600px) {
-.search-box{
-  width: 100%;
-  margin-bottom: 30px;
+  .search-box {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
-
-}
-  </div>
-</template>
-
-<style>
 </style>
