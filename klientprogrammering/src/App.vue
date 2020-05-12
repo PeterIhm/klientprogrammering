@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/eventsnearby">Events nearby</router-link>
-      <router-link to="/eventsbylocation">Events by location</router-link>
-      <router-link to="/eventsbyarea">Events by area</router-link>
-      <router-link to="/about">About</router-link>
+      <router-link to="/"><p>Home</p></router-link>
+      <router-link to="/eventsnearby"><p>Events nearby</p></router-link>
+      <router-link to="/eventsbylocation"><p>By location</p></router-link>
+      <router-link to="/eventsbyarea"><p>Events by area</p></router-link>
+      <router-link to="/about"><p>About</p></router-link>
     </div>
     <router-view />
     <main>
@@ -41,9 +41,21 @@ export default {
   box-sizing: border-box;
 }
 
+
 body {
   font-family: "montserrat", sans-serif;
 }
+
+#nav{
+  background-color: #313131;
+  
+}
+
+#nav p{
+  color:aliceblue;
+}
+
+
 
 #app {
   background-image: url("./assets/City.jpg"); /* lägg till backgroundbild */

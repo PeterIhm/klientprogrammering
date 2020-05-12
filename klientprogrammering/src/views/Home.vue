@@ -9,3 +9,10 @@ export default {
   name: 'Home',
 }
 </script>
+
+<style scoped>
+h1{
+  background-color: rgb(255, 255, 0);
+}
+</style>
+
