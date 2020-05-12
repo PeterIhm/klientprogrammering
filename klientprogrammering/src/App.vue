@@ -5,8 +5,6 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-
-
     <main>
       <div class="search-box"> 
         <input type="text" class="search-bar" placeholder="Search..." />
@@ -116,7 +114,8 @@ main{
 }
 
 }
+  </div>
+</template>
 
-
-
+<style>
 </style>
