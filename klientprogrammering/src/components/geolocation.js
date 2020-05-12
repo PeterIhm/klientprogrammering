@@ -17,3 +17,7 @@ function locate(){
         })
     }
 }
+const location = {
+    location: () => locate()
+}
+export default location
