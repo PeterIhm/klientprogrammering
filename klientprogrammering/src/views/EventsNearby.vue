@@ -1,6 +1,6 @@
 <template>
   <div class="eventsnearby">
-    <h1>This is events nearby</h1>
+    <h1>Events nearby</h1>
   </div>
 </template>
 
