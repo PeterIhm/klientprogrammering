@@ -11,12 +11,12 @@ Arbetet:
 - Aoife - Geolocation (basen är färdig, behöver export statement, och kopplingen med services). Läsa in om Toast och börja med skriva kod för felhantering Geolocation.
 - Elske - Services (basen för events nearby är färdig). Koppla ihop events nearby med Gelocation. Skriva services för location och area. Börja skriva felhantering för services tillsammans med Aoife.
 
-To do:
-- Skapa olika VUE filer för Events Nearby, Location och Area. Koppla ihop dem i App.vue genom router länk.
-- Felhantering Geolocation
-- Felhantering Services
+To do 15/5:
+- Koppla ihop olika vyer med services (tänk: län från dropdown meny med constanten eventsByArea / GeoLocation med constanten eventsNearby och vyn / query från location med eventsByLocation)
+- anropa services från store
+- Hantering av JSON object - vilka attributer tar vi ut, hur kan man skriva ut de på rätt sätt
+- Felhantering Geolocation och Services
 - About pop up
-- Tool / Buttonbar
 - Hämta data från serviceklassen i app
 - Image / design
 - Enhetstester
@@ -26,4 +26,6 @@ Verktyg:
 - Vue CLI 
 - SPA
 - Vue Toaster
+- Vuex
+
 
