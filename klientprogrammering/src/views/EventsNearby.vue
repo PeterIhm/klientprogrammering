@@ -8,6 +8,7 @@
         </select>
         <button class="search-button">Search</button>
       </div>
+      </div>
 </template>
 
 <script>

@@ -1,4 +1,4 @@
-import {getPosition} from '.src/components/geolocation.js'
+import {getPosition} from '../components/geolocation.js'
 function getEvents(url) {
     return fetch(url)
         .then(resp => { /* await */
