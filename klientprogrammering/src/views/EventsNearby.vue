@@ -1,8 +1,15 @@
 <template>
   <div class="eventsnearby">
-    <h1>Events nearby</h1>
-  </div>
+      <h1>Eventsnearby</h1>
+      <div class="search-box">
+        <input type="text" class="search-bar" placeholder="Search..." />
+        <select class="search-dropdown">
+          <option value="0">Stockholms län</option>
+        </select>
+        <button class="search-button">Search</button>
+      </div>
 </template>
+
 <script>
 import BrottsplatsService from '@/services/services.js'
 export default {
@@ -14,7 +21,10 @@ export default {
 </script>
 
 <style>
-h1{
-  background-color: beige;
+
+.search-box{
+  background-color: #822c57;
 }
+
+
 </style>
