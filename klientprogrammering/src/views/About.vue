@@ -7,6 +7,6 @@
 <style scoped>
 
 h1{
-  background-color: beige;
+  background-color: #822c57;
 }
 </style>
