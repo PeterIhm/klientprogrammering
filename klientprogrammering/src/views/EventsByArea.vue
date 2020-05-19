@@ -30,6 +30,15 @@
   </div>
 </template>
 
+<script>
+import BrottsplatsService from '@/services/services.js'
+export default {
+  mounted(){
+    BrottsplatsService.eventsByArea().then(data => console.log(data))
+  }
+}
+</script>
+
 <style scoped>
 
 .search-box {
