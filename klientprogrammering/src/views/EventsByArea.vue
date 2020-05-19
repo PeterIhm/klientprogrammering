@@ -1,11 +1,75 @@
 <template>
   <div class="eventsbyarea">
-    <h1>This is events by area</h1>
+    <div class="search-box">
+      <select class="search-dropdown">
+        <option value="0">Blekinge län</option>
+        <option value="1">Dalarnas län</option>
+        <option value="2">Gotlands län</option>
+        <option value="3">Gävleborgs län</option>
+        <option value="4">Hallands län</option>
+        <option value="5">Jämtlands län</option>        
+        <option value="6">Jönköpings län</option>
+        <option value="7">Kalmar län</option>
+        <option value="8">Kronobergs län</option>
+        <option value="9">Norrbottens län</option>
+        <option value="10">Skåne län</option>
+        <option value="11">Stockholms län</option>
+        <option value="12">Södermanlands län</option>
+        <option value="13">Uppsala  län</option>
+        <option value="14">Värmlands län</option>
+        <option value="15">Västerbottens län</option>        
+        <option value="16">Västernorrlands län</option>
+        <option value="17">Västmanlands län</option>
+        <option value="18">Västra Götalands län</option>
+        <option value="19">Örebro län</option>
+        <option value="20">Östergötlands län</option>
+      </select>
+
+      <button class="search-button"><i class="fa fa-search"></i></button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-h1{
-  background-color: #822c57;
+
+.search-box {
+  width: 100%;
+  background-color:rgb(255, 255, 255);
+}
+
+.search-box .search-dropdown {
+  width: 80%;
+  padding: 15px;
+  color: #313131;
+  font-size: 20px;
+  text-overflow: clip;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 0px 0px 0px 0px;
+  transition: 0.4s;
+}
+
+/*!Search Dropdown*/
+
+
+
+/*!Search Button*/
+
+.search-box .search-button {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  width: 20%;
+  min-height: 5.1ex;
+  border-radius: 0px 0px 0px 0px;
+  border: 0ch;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
 }
 </style>
