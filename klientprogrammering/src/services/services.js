@@ -1,3 +1,4 @@
+import {getPosition} from '.src/components/geolocation.js'
 function getEvents(url) {
     return fetch(url)
         .then(resp => { /* await */
@@ -30,7 +31,9 @@ function searchEvents(query) {
     /*json.map(h => h.handelse)*/)
 }
 const BrottsplatsService = {
-    eventsNearby: () => getEvents('https://brottsplatskartan.se/api/eventsNearby?lat=57.70&lng=11.96'),
+
+    getPosition().then(() => 
+    getEvents(`https://brottsplatskartan.se/api/eventsNearby?lat=${position.coords.latitude}&lng=${position.coords.longitude}}`)),
     eventsByLocation: () => searchEvents,
     eventsByArea: () => getEvents('https://brottsplatskartan.se/api/events/?area=västra götalands län')
 }
