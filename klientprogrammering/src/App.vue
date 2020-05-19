@@ -57,7 +57,7 @@ body {
 
 main {
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.3);
   /*background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 075));*/
 }
 
@@ -87,8 +87,8 @@ main {
 }
 
 #nav button:hover{
-background: transparent; /*#00ff99*/ /*00ff99*/
-color: #2c5583; /*5aa6fe*/
+  background: transparent; /*#00ff99*/ /*00ff99*/
+  color: #4885cc; /*5aa6fe*/
 }
 
 
