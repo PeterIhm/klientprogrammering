@@ -1,6 +1,8 @@
 <template>
   <div class="eventsnearby">
       <h1>Eventsnearby</h1>
+    <h1>Alla dagar är bra dagar</h1>
+    <p>Alla dagar är fortsatt bra dagar</p>
   </div>
 </template>
 

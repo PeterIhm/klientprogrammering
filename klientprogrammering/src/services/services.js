@@ -57,7 +57,7 @@ async function getEventsNearby(){
   //  .then(() getEvents(`{let atlas = pos.coords;}`, )),
 let pos = await getPosition()
 
-let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.latitude}&lng=${pos.longitude}&app=whatsthebuzzsve`
+let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&app=whatsthebuzzsve`
 
 console.log(url)
 return getEvents(url)
@@ -67,7 +67,6 @@ return getEvents(url)
 const BrottsplatsService = {
 
     getEventsNearby,
-        
     eventsByLocation: () => searchEvents,
     eventsByArea: () => getEvents('https://brottsplatskartan.se/api/events/?area=västra götalands län&app=whatsthebuzzsve')
 }
