@@ -1,84 +1,35 @@
 <template>
-  
-    <div class="text">      
-      <h1>Jag är bäst!</h1>
-      <br>
-      <div class="caption"><p>Information!</p></div>
+  <div class="about">
+       
+    <h1>What's the Buzz Sverige</h1><br>
+    <p>Är du orolig för ditt liv varje gång du går utanför dörren? Gör ovissheten dig till en fånge i ditt egna hem?
+      Eller är du bara nyfiken på din omgivning och vill veta vad som händer i din närhet? Då är det här appen för dig!
+      </p><br><p>Med What's the Buzz Sverige kan du enkelt ta reda på vilka brott som begåtts i din närhet med bara några enkla knapptryck!
+      Om du är orolig för dina släktingar i andra delar av landet kan du även söka på deras plats!
+      </p><br><div class="end"><p>Happy searching!</p></div>
 
-      <div  class="info"><p>längst upp hittar du navigation knapparna som leder dig till våra olika sidor.</p></div>
-      <br>
-
-      <div class="item">
-        <i class="fa fa-home" style="font-size:3em;"></i>
-        <p>Leder dig till startsidan som du precis befinner dig på.</p>
-      </div>
-    <br>
-      <div class="item">
-        <i class="fa fa-map-marker" style="font-size:3em;"></i>
-        <p>Leder dig till händelser omkring dig.</p>
-      </div>
-    <br>
-      <div class="item">
-        <i class="fa fa-building" style="font-size:3em;"></i>
-        <p>Leder dig till...</p>
-      </div>
-    <br>
-      <div class="item">
-        <i class="fa fa-globe" style="font-size:3em;"></i>
-        <p>Leder dig till...</p>
-      </div>
-    <br>
-      <div class="item">
-        <i class="fa fa-info-circle" style="font-size:3em;"></i>
-        <p>Leder dig till...</p>
-      </div>
   </div>
 </template>
 
 <style scoped>
 
-.info p{
+h1{
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  text-shadow: 2px 2px #0000005b;
+}
+
+p{
+  color: white;
   margin-left: 0.8em;
   margin-right: 0.5em;
-}
-
-.text h1{  
-  background-color: rgba(0, 0, 0, 0);
-  font-size: 35px;
   text-shadow: 2px 2px #0000005b;
-  color: white;
-  text-align: center;
 }
 
-.text .caption p{
-  margin-left: 0.5em;
-  font-size: 25px;
-  text-shadow: 2px 2px #0000005b;
-  color: rgb(255, 255, 255);
+.end p {
+ 
+ text-align: center;
+ font-size: 20px;
 }
-
-.text p, .text i{
-  font-size: 15px;
-  text-shadow: 2px 2px #0000005b;
-  color: white;
-}
-
-.text .item{
-  display: flex; 
-  align-items:center;
-  justify-content: space-around;
-  
-}
-
-.text .item i{
-  text-align: center;
-  flex: 1;
-}
-
-.text .item p{  
-  flex: 5;
-}
-
-
 </style>
-
