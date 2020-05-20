@@ -1,23 +1,22 @@
 <template>
-<main>  
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/src/all.min.css">
   <div id="app">
     <div id="nav">
-      <router-link to="/"><button id="button" class="button"><i class="fa fa-home" style="font-size:4em;"></i></button></router-link>
-      <router-link to="/eventsnearby"><button id="button" class="button"><i class="fa fa-map-marker" style="font-size:4em;"></i></button></router-link>
-      <router-link to="/eventsbylocation"><button id="button" class="button"><i class="fa fa-building" style="font-size:4em;"></i></button></router-link>
-      <router-link to="/eventsbyarea"><button id="button" class="button"><i class="fa fa-globe" style="font-size:4em;"></i></button></router-link>
-      <router-link to="/about"><button id="button" class="button"><i class="fa fa-info-circle" style="font-size:4em;"></i></button></router-link>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-  </div>
+    <main>
+      <div class="search-box"> 
+        <input type="text" class="search-bar" placeholder="Search..." />
 
-  <div class="background">
+        <select class="search-dropdown">
+          <option value="0">Stockholms län</option>
+        </select>
 
+        <button class="search-button">Search</button>
+      </div>
+    </main>
   </div>
-  </main>
 </template>
 
 <script>
@@ -30,66 +29,93 @@ export default {
     }
   }
 }*/
+
 </script>
 
 <style>
-
-h1{
-  background-color: #ceeaff;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Montserrat';
-  /* background-image: url("./assets/City.jpg");*/
-  background-size: cover;
+body{
+  font-family: 'montserrat', sans-serif;
+}
 
-  background-image: url("./assets/cold-bg.jpg"); /* lägg till backgroundbild */
+#app{
+  background-image: url('./assets/City.jpg'); /* lägg till backgroundbild */
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
 }
 
-main {
+main{
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  /*background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 075));*/
+  padding: 25px; /* change <--- not px*/
+
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,075));
 }
 
-/*Navigation*/
+/*!Search box/bar*/ 
 
-#nav{
-  background-color: #262626;
-  padding-left: 1em;
-  float: left;
-  text-decoration: none;
-  width: 100%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
-  text-align: center; /* If you want the text to be centered */
-  display: flex;
-
-  justify-content: center;
-  
+.search-box{
+  width: 50%;
+  margin-bottom: 30px;
 }
 
-#nav button{
-  color: white;
-  
-  margin: 1em 2em 1em 0;  
-  background-color:#262626;
-  background-repeat:no-repeat;
+.search-box .search-bar{
+  width: 45%;
+  padding: 15px;
+  color: #313131;
+  font-size: 20px;
+  text-overflow: clip;
+  appearance: none;
+  border:none;
+  outline:none;
+  background: none;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px 0px 0px 16px;
+  transition: 0.4s;
+}
+
+/*!Search Dropdown*/ 
+
+.search-box .search-dropdown{
+  overflow:hidden;
+  font-size: 20px;
+  width: 30%;
+  border-color: rgb(255, 255, 255);
+  min-height: 5.1ex;
+  border-radius: 0px 0px 0px 0px;
+}
+
+/*!Search Button*/
+
+.search-box .search-button{
+  overflow:hidden;
+  background-color: rgb(255, 255, 255);  
+  width: 25%;
+  min-height: 5.1ex;
+  border-radius: 0px 16px 16px 0px;
   border: none;
-  overflow: hidden; 
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
 }
 
-#nav button:hover{
-  background: transparent; /*#00ff99*/ /*00ff99*/
-  color: #4885cc; /*5aa6fe*/
+@media only screen and (max-width: 600px) {
+.search-box{
+  width: 100%;
+  margin-bottom: 30px;
 }
 
+}
+  </div>
+</template>
 
+<style>
 </style>
