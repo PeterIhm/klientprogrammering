@@ -1,54 +1,68 @@
 <template>
   <div class="eventsbylocation">
-
     <div class="search-box">
-        <input type="text" class="search-bar" placeholder="Location..." />
-        <button class="search-button"><i class="fa fa-search"></i></button>
+      <input type="text" class="search-bar" v-model="search" placeholder="Location..." />
+      <button class="search-button">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+
+    <!--<h1>Events by location</h1>-->
+    <h1>GÖTEBORG</h1>
+
+    <div class="hej">
+      <p>hej!</p>
+    </div>
   </div>
-
-     <!--<h1>Events by location</h1>-->
-     <h1>GÖTEBORG</h1>
-
-     <div class="hej"><p>hej!</p></div>
-
-</div>
-  
 </template>
 
+<script>
+import BrottsplatsService from "@/services/services.js";
+export default {
+  data() {
+    return {
+      searchText: ''
+    }
+  },
+  mounted: function(){
+    BrottsplatsService.eventsByLocation(this.searchText).then(data => console.log(data))
+  }
+};
+</script>
 
 <style scoped>
-h1{  
+h1 {
   font-size: 2em;
   text-shadow: 3px 3px #0000002b;
   background-color: transparent;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 
   margin-top: 1em;
   text-align: center;
 }
 
-.hej{
+.hej {
   background-color: rgba(255, 255, 255);
 }
 
-.hej p{
+.hej p {
   margin: 1em;
 }
 
-.header{
+.header {
   font-size: 2ch;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
-.text{
-    color:rgb(255, 255, 255);
+.text {
+  color: rgb(255, 255, 255);
 }
 
 /*!Search box/bar*/
 
 .search-box {
   width: 100%;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .search-box .search-bar {
@@ -68,8 +82,6 @@ h1{
 }
 
 /*!Search Dropdown*/
-
-
 
 /*!Search Button*/
 
