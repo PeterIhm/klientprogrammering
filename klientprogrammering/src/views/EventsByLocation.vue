@@ -1,14 +1,14 @@
 <template>
   <div class="eventsbylocation">
     <div class="search-box">
-      <input type="text" class="search-bar" v-model="search" placeholder="Location..." />
-      <button class="search-button">
+      <input class="search-bar" type="text" v-model="searchTerm" @keyup.enter="search" placeholder="Sök stad..."/>
+      <button class="search-button" type="button" @click="search">
         <i class="fa fa-search"></i>
       </button>
     </div>
 
     <!--<h1>Events by location</h1>-->
-    <h1>GÖTEBORG</h1>
+    <h1>{{searchTerm}}</h1>
 
     <div class="hej">
       <p>hej!</p>
@@ -21,11 +21,13 @@ import BrottsplatsService from "@/services/services.js";
 export default {
   data() {
     return {
-      searchText: ''
+      searchTerm: ''
     }
   },
-  mounted: function(){
-    BrottsplatsService.eventsByLocation(this.searchText).then(data => console.log(data))
+  methods: {
+    search() {
+      BrottsplatsService.search(this.searchTerm).then(data =>console.log(data))
+    }
   }
 };
 </script>

@@ -4,8 +4,9 @@ export function getPosition(options) {
       navigator.geolocation.getCurrentPosition(resolve, reject, options)
     }
     else {
-      reject()
+      reject('Vi kan tyvärr inte hitta din plats')
     }
   })
 }
 
+console.log(getPosition)
