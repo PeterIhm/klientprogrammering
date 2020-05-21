@@ -1,49 +1,44 @@
 <template>
   <div class="eventsbyarea">
-    <div class="search-box">
-      <select class="search-dropdown">
-        <option value="0">Blekinge län</option>
-        <option value="1">Dalarnas län</option>
-        <option value="2">Gotlands län</option>
-        <option value="3">Gävleborgs län</option>
-        <option value="4">Hallands län</option>
-        <option value="5">Jämtlands län</option>        
-        <option value="6">Jönköpings län</option>
-        <option value="7">Kalmar län</option>
-        <option value="8">Kronobergs län</option>
-        <option value="9">Norrbottens län</option>
-        <option value="10">Skåne län</option>
-        <option value="11">Stockholms län</option>
-        <option value="12">Södermanlands län</option>
-        <option value="13">Uppsala  län</option>
-        <option value="14">Värmlands län</option>
-        <option value="15">Västerbottens län</option>        
-        <option value="16">Västernorrlands län</option>
-        <option value="17">Västmanlands län</option>
-        <option value="18">Västra Götalands län</option>
-        <option value="19">Örebro län</option>
-        <option value="20">Östergötlands län</option>
-      </select>
+    <div class="search-box" id="dropdownlist">
+      <v-select v-model="selected" @input="getSelected" class="search-dropdown" placeholder="Välj län"
+        :options="['Blekinge län', 'Dalarnas län', 'Gotlands län', 'Gävleborgs län', 'Hallands län', 'Jämtlands län', 'Jönköpings län', 'Kalmar län', 'Kronobergs län', 'Norrbottens län', 'Skåne län', 'Stockholms län', 'Södermanlands län', 'Uppsala län', 'Värmlands län', 'Västerbottens län', 'Västernorrlands län', 'Västmanlands län', 'Västra Götalands län', 'Örebro län', 'Östergötlands län']"
+      >
+      </v-select>
+        <button class="search-button" @click="getSelected">
+        <i class="fa fa-search"></i>
+        </button>
 
-      <button class="search-button"><i class="fa fa-search"></i></button>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import vSelect from 'vue-select'
+Vue.component('v-select', vSelect)
+import 'vue-select/dist/vue-select.css';
 import BrottsplatsService from '@/services/services.js'
 export default {
-  mounted(){
-    BrottsplatsService.eventsByArea().then(data => console.log(data))
+  data() {
+    return {
+      selected: ''
+    }
+  },
+  methods: {
+    getSelected() {
+      console.log(this.selected)
+      BrottsplatsService.eventsByArea(this.selected).then(data => console.log(data))
+    }
   }
-}
+};
 </script>
 
 <style scoped>
 
 .search-box {
   width: 100%;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .search-box .search-dropdown {
@@ -63,8 +58,6 @@ export default {
 }
 
 /*!Search Dropdown*/
-
-
 
 /*!Search Button*/
 

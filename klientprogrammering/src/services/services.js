@@ -63,10 +63,15 @@ let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.coords.latitu
 
 }
 
+function createURL(länQuery) {
+    let url = 'https://brottsplatskartan.se/api/events/?area=' + länQuery + '&app=whatsthebuzzsve'
+    return getEvents(url)
+}
+
 const BrottsplatsService = {
     getEventsNearby,
     search: searchEvents,
-    eventsByArea: () => getEvents('https://brottsplatskartan.se/api/events/?area=västra götalands län&app=whatsthebuzzsve')
+    eventsByArea: createURL
 }
 Object.freeze(BrottsplatsService)
 
