@@ -1,7 +1,7 @@
 import { getPosition } from '../components/geolocation.js'
 function getEvents(url) {
     return fetch(url)
-        .then(resp => { /* await */
+        .then(resp => { 
             if (!resp.ok) {
                 throw new Error(resp.statusText)
             }
@@ -29,7 +29,7 @@ function searchEvents(query) {
     let locationQuery = encodeURIComponent(query),
         url = 'https://brottsplatskartan.se/api/events/?location=' + locationQuery + '&app=whatsthebuzzsve'
     return fetch(url)
-        .then(resp => { /* await */
+        .then(resp => {
             if (!resp.ok) {
                 throw new Error(resp.statusText)
             }
@@ -54,7 +54,7 @@ function searchEvents(query) {
 }
 
 async function getEventsNearby() {
-    //  .then(() getEvents(`{let atlas = pos.coords;}`, )),
+
     let pos = await getPosition()
 
 let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&app=whatsthebuzzsve`

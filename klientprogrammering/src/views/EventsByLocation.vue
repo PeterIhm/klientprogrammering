@@ -8,7 +8,7 @@
     </div>
 
     <!--<h1>Events by location</h1>-->
-    <h1>GÖTEBORG</h1>
+    <h1>{{searchTerm}}</h1>
 
     <div class="hej">
       <p>hej!</p>
