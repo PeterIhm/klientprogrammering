@@ -25,34 +25,6 @@ function getEvents(url) {
     /*json.map(h => h.handelse)*/)
 }
 
-function searchEvents(query) {
-    let locationQuery = encodeURIComponent(query),
-        url = 'https://brottsplatskartan.se/api/events/?location=' + locationQuery + '&app=whatsthebuzzsve'
-    return fetch(url)
-        .then(resp => {
-            if (!resp.ok) {
-                throw new Error(resp.statusText)
-            }
-            return resp.json()
-        })
-        .then(json => {
-            let list = []
-            for (let data of json.data) {
-                let event = {}
-                event.title = data.title_type
-                event.location = data.location_string
-                event.date = data.date_human
-                event.info = data.description
-                let contentWOHTML = data.content.replace(/(<([^>]+)>)/ig, "");
-                event.content = contentWOHTML
-                event.link = data.external_source_link
-                list.push(event)
-            }
-            return list
-        }
-    /*json.map(h => h.handelse)*/)
-}
-
 async function getEventsNearby() {
 
     let pos = await getPosition()
@@ -63,14 +35,15 @@ let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.coords.latitu
 
 }
 
-function createURL(länQuery) {
-    let url = 'https://brottsplatskartan.se/api/events/?area=' + länQuery + '&app=whatsthebuzzsve'
+function createURL(query) {
+    let newQuery = encodeURIComponent(query),
+    url = 'https://brottsplatskartan.se/api/events/?area=' + newQuery + '&app=whatsthebuzzsve'
     return getEvents(url)
 }
 
 const BrottsplatsService = {
     getEventsNearby,
-    search: searchEvents,
+    search: createURL,
     eventsByArea: createURL
 }
 Object.freeze(BrottsplatsService)

@@ -18,7 +18,6 @@ import Vue from 'vue'
 import vSelect from 'vue-select'
 Vue.component('v-select', vSelect)
 import 'vue-select/dist/vue-select.css';
-import BrottsplatsService from '@/services/services.js'
 export default {
   data() {
     return {
@@ -27,8 +26,7 @@ export default {
   },
   methods: {
     getSelected() {
-      console.log(this.selected)
-      BrottsplatsService.eventsByArea(this.selected).then(data => console.log(data))
+      this.$store.dispatch("eventsByArea", this.selected)
     }
   }
 };
