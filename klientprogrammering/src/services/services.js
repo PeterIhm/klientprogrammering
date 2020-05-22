@@ -35,16 +35,21 @@ let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.coords.latitu
 
 }
 
-function createURL(query) {
-    let newQuery = encodeURIComponent(query),
-    url = 'https://brottsplatskartan.se/api/events/?area=' + newQuery + '&app=whatsthebuzzsve'
+function createURLArea(query) {
+    let url = 'https://brottsplatskartan.se/api/events/?area=' + query + '&app=whatsthebuzzsve'
+    return getEvents(url)
+}
+
+function createURLLocation(query) {
+    let locationQuery = encodeURIComponent(query),
+    url = 'https://brottsplatskartan.se/api/events/?location=' + locationQuery + '&app=whatsthebuzzsve'
     return getEvents(url)
 }
 
 const BrottsplatsService = {
     getEventsNearby,
-    search: createURL,
-    eventsByArea: createURL
+    search: createURLLocation,
+    eventsByArea: createURLArea
 }
 Object.freeze(BrottsplatsService)
 
