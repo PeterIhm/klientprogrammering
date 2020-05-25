@@ -7,8 +7,7 @@
 </template>
 
 <script>
-  //import Toasted from 'vue-toasted';
-  //vue.use(Toasted, Options)
+
 
 import BrottsplatsService from '@/services/services.js'
 export default {
