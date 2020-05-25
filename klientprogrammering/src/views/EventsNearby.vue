@@ -1,42 +1,13 @@
 <template>
   <div class="eventsnearby">
-    <h1>Eventsnearby</h1>
-    <h1>Alla dagar är bra dagar</h1>
-    <p>Alla dagar är fortsatt bra dagar</p>
-    <div class="collapsibles">
-      <ul>
-        <li v-for="event in $store.state.events" :key="event.id">
-          <div>
-            <button class="sibling-hover">
-              <p>{{event.title}}</p>
-            </button>
-            <div class="sibling-highlight">
-              <br />
-              <div class="content">
-                <p>{{event.info}}</p>
-              </div>
-              <br />
-              <div class="content">
-                <p>{{event.content}}</p>
-              </div>
-              <br />
-              <br />
-              <div class="content">
-                <p>{{event.location}}</p>
-              </div>
-              <br />
-              <div class="date">
-                <p>{{event.date}}</p>
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
+      <h1>What's the buzz hos dig?</h1>
+      <p>Här visas de 10 senaste brotten som begåtts i närheten av din plats</p>
+
   </div>
 </template>
 
 <script>
+import BrottsplatsService from '@/services/services.js'
 export default {
   mounted() {
     this.$store.dispatch("eventsNearby");
