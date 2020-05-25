@@ -1,41 +1,84 @@
 <template>
   <div class="eventsbyarea">
     <div class="search-box" id="dropdownlist">
-      <v-select v-model="selected" @input="getSelected" class="search-dropdown" placeholder="Välj län"
-        :options="['Blekinge län', 'Dalarnas län', 'Gotlands län', 'Gävleborgs län', 'Hallands län', 'Jämtlands län', 'Jönköpings län', 'Kalmar län', 'Kronobergs län', 'Norrbottens län', 'Skåne län', 'Stockholms län', 'Södermanlands län', 'Uppsala län', 'Värmlands län', 'Västerbottens län', 'Västernorrlands län', 'Västmanlands län', 'Västra Götalands län', 'Örebro län', 'Östergötlands län']"
-      >
-      </v-select>
-        <button class="search-button" @click="getSelected">
-        <i class="fa fa-search"></i>
-        </button>
-
+      <select v-model="selected" @input="getSelected" class="search-dropdown">
+        <option disabled value>Välj län</option>
+        <option>Blekinge län</option>
+        <option>Dalarnas län</option>
+        <option>Gotlands län</option>
+        <option>Gävleborgs län</option>
+        <option>Hallands län</option>
+        <option>Jämtlands län</option>
+        <option>Jönköpings län</option>
+        <option>Kalmar län</option>
+        <option>Kronobergs län</option>
+        <option>Norrbottens län</option>
+        <option>Skåne län</option>
+        <option>Stockholms län</option>
+        <option>Södermanlands län</option>
+        <option>Uppsala län</option>
+        <option>Värmlands län</option>
+        <option>Västerbottens län</option>
+        <option>Västernorrlands län</option>
+        <option>Västmanlands län</option>
+        <option>Västra Götalands län</option>
+        <option>Örebro län</option>
+        <option>Östergötlands län</option>
+      </select>
+    </div>
+    <div class="collapsibles">
+      <ul>
+        <li v-for="event in $store.state.events" :key="event.id">
+          <div>
+            <button class="sibling-hover">
+              <p>{{event.title}}</p>
+            </button>
+            <div class="sibling-highlight">
+              <br />
+              <div class="content">
+                <p>{{event.info}}</p>
+              </div>
+              <br />
+              <div class="content">
+                <p>{{event.content}}</p>
+              </div>
+              <br />
+              <br />
+              <div class="content">
+                <p>{{event.location}}</p>
+              </div>
+              <br />
+              <div class="date">
+                <p>{{event.date}}</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import vSelect from 'vue-select'
-Vue.component('v-select', vSelect)
-import 'vue-select/dist/vue-select.css';
-import BrottsplatsService from '@/services/services.js'
+import Vue from "vue";
+import vSelect from "vue-select";
+Vue.component("v-select", vSelect);
+import "vue-select/dist/vue-select.css";
 export default {
   data() {
     return {
-      selected: ''
-    }
+      selected: ""
+    };
   },
   methods: {
     getSelected() {
-      console.log(this.selected)
-      BrottsplatsService.eventsByArea(this.selected).then(data => console.log(data))
+      this.$store.dispatch("eventsByArea", this.selected);
     }
   }
 };
 </script>
 
 <style scoped>
-
 .search-box {
   width: 100%;
   background-color: rgb(255, 255, 255);
@@ -56,10 +99,6 @@ export default {
   border-radius: 0px 0px 0px 0px;
   transition: 0.4s;
 }
-
-/*!Search Dropdown*/
-
-/*!Search Button*/
 
 .search-box .search-button {
   overflow: hidden;
