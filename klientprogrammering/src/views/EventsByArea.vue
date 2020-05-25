@@ -1,49 +1,87 @@
 <template>
   <div class="eventsbyarea">
-    <div class="search-box">
-      <select class="search-dropdown">
-        <option value="0">Blekinge län</option>
-        <option value="1">Dalarnas län</option>
-        <option value="2">Gotlands län</option>
-        <option value="3">Gävleborgs län</option>
-        <option value="4">Hallands län</option>
-        <option value="5">Jämtlands län</option>        
-        <option value="6">Jönköpings län</option>
-        <option value="7">Kalmar län</option>
-        <option value="8">Kronobergs län</option>
-        <option value="9">Norrbottens län</option>
-        <option value="10">Skåne län</option>
-        <option value="11">Stockholms län</option>
-        <option value="12">Södermanlands län</option>
-        <option value="13">Uppsala  län</option>
-        <option value="14">Värmlands län</option>
-        <option value="15">Västerbottens län</option>        
-        <option value="16">Västernorrlands län</option>
-        <option value="17">Västmanlands län</option>
-        <option value="18">Västra Götalands län</option>
-        <option value="19">Örebro län</option>
-        <option value="20">Östergötlands län</option>
+    <div class="search-box" id="dropdownlist">
+      <select v-model="selected" @input="getSelected" class="search-dropdown">
+        <option disabled value>Välj län</option>
+        <option>Blekinge län</option>
+        <option>Dalarnas län</option>
+        <option>Gotlands län</option>
+        <option>Gävleborgs län</option>
+        <option>Hallands län</option>
+        <option>Jämtlands län</option>
+        <option>Jönköpings län</option>
+        <option>Kalmar län</option>
+        <option>Kronobergs län</option>
+        <option>Norrbottens län</option>
+        <option>Skåne län</option>
+        <option>Stockholms län</option>
+        <option>Södermanlands län</option>
+        <option>Uppsala län</option>
+        <option>Värmlands län</option>
+        <option>Västerbottens län</option>
+        <option>Västernorrlands län</option>
+        <option>Västmanlands län</option>
+        <option>Västra Götalands län</option>
+        <option>Örebro län</option>
+        <option>Östergötlands län</option>
       </select>
-
-      <button class="search-button"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="collapsibles">
+      <ul>
+        <li v-for="event in $store.state.events" :key="event.id">
+          <div>
+            <button class="sibling-hover">
+              <p>{{event.title}}</p>
+            </button>
+            <div class="sibling-highlight">
+              <br />
+              <div class="content">
+                <p>{{event.info}}</p>
+              </div>
+              <br />
+              <div class="content">
+                <p>{{event.content}}</p>
+              </div>
+              <br />
+              <br />
+              <div class="content">
+                <p>{{event.location}}</p>
+              </div>
+              <br />
+              <div class="date">
+                <p>{{event.date}}</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import BrottsplatsService from '@/services/services.js'
+import Vue from "vue";
+import vSelect from "vue-select";
+Vue.component("v-select", vSelect);
+import "vue-select/dist/vue-select.css";
 export default {
-  mounted(){
-    BrottsplatsService.eventsByArea().then(data => console.log(data))
+  data() {
+    return {
+      selected: ""
+    };
+  },
+  methods: {
+    getSelected() {
+      this.$store.dispatch("eventsByArea", this.selected);
+    }
   }
-}
+};
 </script>
 
 <style scoped>
-
 .search-box {
   width: 100%;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .search-box .search-dropdown {
@@ -61,12 +99,6 @@ export default {
   border-radius: 0px 0px 0px 0px;
   transition: 0.4s;
 }
-
-/*!Search Dropdown*/
-
-
-
-/*!Search Button*/
 
 .search-box .search-button {
   overflow: hidden;

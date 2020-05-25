@@ -1,31 +1,72 @@
 <template>
   <div class="eventsbylocation">
     <div class="search-box">
-      <input type="text" class="search-bar" v-model="search" placeholder="Location..." />
-      <button class="search-button">
+      <input
+        class="search-bar"
+        type="text"
+        v-model="searchTerm"
+        @keyup.enter="search"
+        placeholder="Sök stad..."
+      />
+      <button class="search-button" type="button" @click="search">
         <i class="fa fa-search"></i>
       </button>
     </div>
 
     <!--<h1>Events by location</h1>-->
-    <h1>GÖTEBORG</h1>
+    <h1>{{searchTerm}}</h1>
+    <br />
 
-    <div class="hej">
-      <p>hej!</p>
+    <!--       <button class="collapsible">{{event.title}}</button>
+      <div class="content">
+        <p>{{event.content}}</p>
+    </div>-->
+
+    <div class="collapsibles">
+      <ul>
+        <li v-for="event in $store.state.events" :key="event.id">
+          <div>
+            <button class="sibling-hover">
+              <p>{{event.title}}</p>
+            </button>
+            <div class="sibling-highlight">
+              <br />
+              <div class="content">
+                <p>{{event.info}}</p>
+              </div>
+              <br />
+              <div class="content">
+                <p>{{event.content}}</p>
+              </div>
+              <br />
+              <br />
+              <div class="content">
+                <p>{{event.location}}</p>
+              </div>
+              <br />
+              <div class="date">
+                <p>{{event.date}}</p>
+              </div>
+            </div>
+          </div> 
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import BrottsplatsService from "@/services/services.js";
+
 export default {
   data() {
     return {
-      searchText: ''
-    }
+      searchTerm: ""
+    };
   },
-  mounted: function(){
-    BrottsplatsService.eventsByLocation(this.searchText).then(data => console.log(data))
+  methods: {
+    search() {
+      this.$store.dispatch("search", this.searchTerm);
+    }
   }
 };
 </script>
@@ -39,14 +80,6 @@ h1 {
 
   margin-top: 1em;
   text-align: center;
-}
-
-.hej {
-  background-color: rgba(255, 255, 255);
-}
-
-.hej p {
-  margin: 1em;
 }
 
 .header {
@@ -81,8 +114,6 @@ h1 {
   transition: 0.4s;
 }
 
-/*!Search Dropdown*/
-
 /*!Search Button*/
 
 .search-box .search-button {
@@ -97,5 +128,42 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
+}
+
+/*.text*/
+
+.sibling-hover,
+#parent {
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #00000050;
+  outline: none;
+  padding: 1em;
+  font-size: 1em;
+}
+
+.sibling-hover ~ .sibling-highlight {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sibling-hover:hover ~ .sibling-highlight {
+  display: block;
+  color: white;
+}
+
+.content >>> p {
+  margin-left: 0.8em;
+  margin-right: 0.5em;
+  text-align: left;
+  text-shadow: 2px 2px #0000005b;
+}
+
+.date >>> p {
+  margin-left: 0.8em;
+  margin-right: 0.5em;
+  text-align: right;
+  text-shadow: 2px 2px #0000005b;
 }
 </style>
