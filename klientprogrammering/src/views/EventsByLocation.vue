@@ -24,7 +24,7 @@
 
     <div class="collapsibles">
       <ul>
-        <li v-for="event in $store.state.events" :key="event.content">
+        <li v-for="event in $store.state.events" :key="event.id">
           <div>
             <button class="sibling-hover">
               <p>{{event.title}}</p>

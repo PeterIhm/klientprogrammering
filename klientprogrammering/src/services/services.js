@@ -11,6 +11,7 @@ function getEvents(url) {
             let list = []
             for (let data of json.data) {
                 let event = {}
+                event.id = data.id
                 event.title = data.title_type
                 event.location = data.location_string
                 event.date = data.date_human
