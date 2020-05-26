@@ -1,7 +1,7 @@
 <template>
   
     <div class="text">      
-      <h1>Min grupp är bäst!</h1>
+      <h1>About</h1>
       <br>
       <div class="caption"><p>Information!</p></div>
 
