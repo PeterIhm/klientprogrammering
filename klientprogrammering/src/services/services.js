@@ -1,4 +1,5 @@
 import { getPosition } from '../components/geolocation.js'
+
 function getEvents(url) {
     return fetch(url)
         .then(resp => {
@@ -23,8 +24,8 @@ function getEvents(url) {
             }
             return list
         }
-    /*json.map(h => h.handelse)*/)
-}
+
+    )}
 
 async function getEventsNearby() {
 
