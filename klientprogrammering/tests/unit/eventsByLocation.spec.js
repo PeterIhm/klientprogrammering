@@ -13,21 +13,21 @@ localVue.use(Vuex)
 
 describe('EventsByLocation.vue', () => {
 
-    let eventsByLocation
+    let actions
     let store
 
     beforeEach(() => {
-        eventsByLocation = {
-            search: chai.spy
+        actions = {
+            search: chai.spy(),
         }
-        store = new Vuex.store({
-            eventsByLocation
+        store = new Vuex.Store({
+            actions
         })
     })
 
     it('Calls store action search when button is clicked', () => {
         const wrapper = shallowMount(EventsByLocation, { store, localVue })
         wrapper.find('button').trigger('click')
-        expect(eventsByLocation.search).to.have.been.called()
+        expect(actions.search).to.have.been.called()
     })
 })
