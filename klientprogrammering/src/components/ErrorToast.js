@@ -1,5 +1,5 @@
 import Toasted from 'vue-toasted';
-  vue.use(Toasted, Options)
+  vue.use(Toasted)
 
 
   let minToast = this.$toasted.show('Vi kan tyvärr inte hitta din plats')

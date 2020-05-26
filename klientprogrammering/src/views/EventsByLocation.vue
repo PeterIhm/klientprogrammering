@@ -166,11 +166,11 @@ h1 {
   text-align: right;
   text-shadow: 2px 2px #0000005b;
 }
-/*
+
 @media screen and ( device-width: 1024px ) {
   .sibling-hover:hover ~ .sibling-highlight {
     display: block;
     color: rgb(255, 0, 0);
   }
-}*/
+}
 </style>
