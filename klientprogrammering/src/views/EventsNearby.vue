@@ -24,9 +24,15 @@ export default {
   },
   methods: {
     nearbyEvents: function() {
-      this.$store.dispatch("eventsNearby");
-    }
+      this.$store.dispatch("eventsNearby").catch(() => {
+      this.$toasted.show("Vi kunde tyvärr inte hitta din plats", {
+        theme: "toasted-primary",
+        position: "bottom-center",
+        duration: 5000
+      });
+    })
   }
+}
 };
 </script>
 
