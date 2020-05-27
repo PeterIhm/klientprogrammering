@@ -2,7 +2,7 @@
   <div class="eventsnearby">
       <h1>What's the buzz hos dig?</h1>
       <p>Här visas de 10 senaste brotten som begåtts i närheten av din plats</p>
-      <button onclick="navigator.geolocation.getCurrentPosition(pos => alert(pos.coords.longitude + ' ' + pos.coords.latitude))">Update</button>
+      <button class="update-button" v-on:click="nearbyEvents" title="Uppdatera"></button>
     <div class="collapsibles">
       <ul>
         <li v-for="event in $store.state.events" :key="event.id">
@@ -39,9 +39,15 @@
 <script>
 export default {
   mounted() {
-    this.$store.dispatch("eventsNearby");
+    this.$store.dispatch("eventsNearby")
+  },
+  methods: {
+    nearbyEvents: function() {
+      this.$store.dispatch("eventsNearby")
+    }
   }
 };
+
 </script>
 
 <style>
@@ -77,5 +83,11 @@ export default {
   margin-right: 0.5em;
   text-align: right;
   text-shadow: 2px 2px #0000005b;
+}
+.update-button {
+  background: white url("../assets/update-button.png") no-repeat;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
 }
 </style>

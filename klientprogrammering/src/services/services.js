@@ -32,7 +32,6 @@ async function getEventsNearby() {
     let pos = await getPosition()
 
     let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&app=whatsthebuzzsve`
-    console.log(url)
     return getEvents(url)
 
 }
