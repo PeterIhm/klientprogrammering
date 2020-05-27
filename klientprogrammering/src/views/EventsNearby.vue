@@ -14,12 +14,16 @@
 <script>
 export default {
   mounted() {
-    this.$store.dispatch("eventsNearby").catch(error => {
-      this.$toasted.show("Det uppståd ett fel" + error);
+    this.$store.dispatch("eventsNearby").catch(() => {
+      this.$toasted.show("Vi kunde tyvärr inte hitta din plats", {
+        theme: "toasted-primary",
+        position: "bottom-center",
+        duration: 5000
+      });
     });
   },
   methods: {
-    nearbyEvents() {
+    nearbyEvents: function() {
       this.$store.dispatch("eventsNearby");
     }
   }
@@ -52,8 +56,8 @@ h3 {
 
 .update-button {
   background: white url("../assets/update-button.png") no-repeat;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background-size: cover;
 }
 </style>
