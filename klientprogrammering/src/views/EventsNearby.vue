@@ -7,8 +7,8 @@
         onclick="navigator.geolocation.getCurrentPosition(pos => alert(pos.coords.longitude + ' ' + pos.coords.latitude))"
       >Update</button>
     </div>
-        <div id="eventlist">
-    <event-list></event-list>
+    <div id="eventlist">
+      <event-list></event-list>
     </div>
   </div>
 </template>
@@ -17,13 +17,16 @@
 export default {
   mounted() {
     this.$store.dispatch("eventsNearby").catch(error => {
-      this.$toasted.show("Det uppståd ett fel" + error);
-    });
+      this.$toasted.show("Det uppståd ett fel" + error)
+    }
+    )},
   methods: {
-    nearbyEvents: function() {
-      this.$store.dispatch("eventsNearby")
+    nearbyEvents() {
+      this.$store.dispatch("eventsNearby").catch(error => {
+      this.$toasted.show("Det uppståd ett fel" + error)
     }
 
+      )}
   }
 };
 
