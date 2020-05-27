@@ -17,7 +17,7 @@
 export default {
   mounted() {
     this.$store.dispatch("eventsNearby").catch(error => {
-      this.$toasted.show("Det uppståd ett fel" + error)
+      this.$toasted.show("Det uppstod ett fel" + error)
     }
     )},
   methods: {
@@ -28,7 +28,7 @@ export default {
 
       )}
   }
-};
+
 
 </script>
 
@@ -58,8 +58,8 @@ h3 {
 
 .update-button {
   background: white url("../assets/update-button.png") no-repeat;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-size: cover;
 }
 </style>
