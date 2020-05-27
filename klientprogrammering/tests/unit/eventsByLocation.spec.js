@@ -33,10 +33,4 @@ describe('EventsByLocation.vue', () => {
     })
 })
 
-describe('Vuex mutations', () => {
-    it('adds an event to the list', () => {
-        let state = { events: [] }
-        mutations.addEvents(state, "Inbrott")
-        expect(state.events).to.have.length(1)
-    })
-})
+

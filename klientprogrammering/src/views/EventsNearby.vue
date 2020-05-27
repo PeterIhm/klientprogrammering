@@ -1,8 +1,13 @@
 <template>
   <div class="eventsnearby">
-      <h1>What's the buzz hos dig?</h1>
-      <p>Här visas de 10 senaste brotten som begåtts i närheten av din plats</p>
-      <button onclick="navigator.geolocation.getCurrentPosition(pos => alert(pos.coords.longitude + ' ' + pos.coords.latitude))">Update</button>
+    <div class="header">
+    <h1>What's the buzz hos dig?</h1>
+    <h3>Här visas de senaste brotten som begåtts i närheten av din plats</h3>
+    <button
+      onclick="navigator.geolocation.getCurrentPosition(pos => alert(pos.coords.longitude + ' ' + pos.coords.latitude))"
+    >Update</button>
+
+    </div>
     <div class="collapsibles">
       <ul>
         <li v-for="event in $store.state.events" :key="event.id">
@@ -29,7 +34,7 @@
                 <p>{{event.date}}</p>
               </div>
             </div>
-          </div> 
+          </div>
         </li>
       </ul>
     </div>
@@ -45,6 +50,26 @@ export default {
 </script>
 
 <style>
+h1 {
+font-size: 2em;
+  text-shadow: 3px 3px #0000002b;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+
+  margin-top: 1em;
+  text-align: center;
+}
+
+h3 {
+
+  text-shadow: 3px 3px #0000002b;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+
+  margin-top: 1em;
+  text-align: center;
+}
+
 .search-box {
   background-color: #822c57;
 }
@@ -78,4 +103,5 @@ export default {
   text-align: right;
   text-shadow: 2px 2px #0000005b;
 }
+
 </style>

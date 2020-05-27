@@ -1,5 +1,6 @@
 <template>
   <div class="eventsbyarea">
+    <h1>What's the Buzz i en viss län</h1>
     <div class="search-box" id="dropdownlist">
       <select v-model="selected" @input="getSelected" class="search-dropdown">
         <option disabled value>Välj län</option>
@@ -34,20 +35,20 @@
               <p>{{event.title}}</p>
             </button>
             <div class="sibling-highlight">
-              <br>
+              <br />
               <div class="content">
                 <p>{{event.info}}</p>
               </div>
-              <br>
+              <br />
               <div class="content">
                 <p>{{event.content}}</p>
               </div>
-              <br>
-              <br>
+              <br />
+              <br />
               <div class="content">
                 <p>{{event.location}}</p>
               </div>
-              <br>
+              <br />
               <div class="date">
                 <p>{{event.date}}</p>
               </div>
@@ -79,6 +80,16 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  font-size: 2em;
+  text-shadow: 3px 3px #0000002b;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+
+  margin-top: 1em;
+  text-align: center;
+}
+
 .search-box {
   width: 100%;
   background-color: rgb(255, 255, 255);
@@ -151,7 +162,7 @@ export default {
   text-shadow: 2px 2px #0000005b;
 }
 
-@media screen and ( device-width: 1024px ) {
+@media screen and (device-width: 1024px) {
   .sibling-hover:active ~ .sibling-highlight {
     display: block;
     color: rgb(255, 0, 0);

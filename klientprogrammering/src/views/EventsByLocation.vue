@@ -1,5 +1,6 @@
 <template>
   <div class="eventsbylocation">
+        <h1>What's the Buzz i en viss plats</h1>
     <div class="search-box">
       <input
         class="search-bar"
@@ -13,14 +14,8 @@
       </button>
     </div>
 
-    <!--<h1>Events by location</h1>-->
     <h1>{{searchTerm}}</h1>
-    <br />
-
-    <!--       <button class="collapsible">{{event.title}}</button>
-      <div class="content">
-        <p>{{event.content}}</p>
-    </div>-->
+    <br>
 
     <div class="collapsibles">
       <ul>
