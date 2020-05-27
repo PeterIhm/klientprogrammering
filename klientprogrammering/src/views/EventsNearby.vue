@@ -19,8 +19,14 @@ export default {
     this.$store.dispatch("eventsNearby").catch(error => {
       this.$toasted.show("Det uppståd ett fel" + error);
     });
+  methods: {
+    nearbyEvents: function() {
+      this.$store.dispatch("eventsNearby")
+    }
+
   }
 };
+
 </script>
 
 <style>
@@ -47,4 +53,10 @@ h3 {
   background-color: #822c57;
 }
 
+.update-button {
+  background: white url("../assets/update-button.png") no-repeat;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
 </style>
