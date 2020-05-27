@@ -1,5 +1,6 @@
 <template>
   <div class="eventsbyarea">
+    <h1>What's the Buzz i en viss län</h1>
     <div class="search-box" id="dropdownlist">
       <select v-model="selected" @input="getSelected" class="search-dropdown">
         <option disabled value>Välj län</option>
@@ -26,11 +27,9 @@
         <option>Östergötlands län</option>
       </select>
     </div>
-
     <div id="eventlist">
     <event-list></event-list>
     </div>
-
   </div>
 </template>
 
@@ -47,13 +46,25 @@ export default {
   },
   methods: {
     getSelected() {
-      this.$store.dispatch("eventsByArea", this.selected);
+      this.$store.dispatch("eventsByArea", this.selected).catch(error => {
+        this.$toasted.show("Det uppståd ett fel" + error);
+      });
     }
   }
 };
 </script>
 
 <style scoped>
+h1 {
+  font-size: 2em;
+  text-shadow: 3px 3px #0000002b;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+
+  margin-top: 1em;
+  text-align: center;
+}
+
 .search-box {
   width: 100%;
   background-color: rgb(255, 255, 255);
@@ -88,5 +99,4 @@ export default {
   display: inline-block;
   font-size: 20px;
 }
-
 </style>

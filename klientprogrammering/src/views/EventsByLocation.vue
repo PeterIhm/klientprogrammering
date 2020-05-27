@@ -1,5 +1,6 @@
 <template>
   <div class="eventsbylocation">
+        <h1>What's the Buzz i en viss plats</h1>
     <div class="search-box">
       <input
         class="search-bar"
@@ -13,9 +14,8 @@
       </button>
     </div>
 
-    <!--<h1>Events by location</h1>-->
     <h1>{{searchTerm}}</h1>
-    <br />
+    <br>
 
     <!--       <button class="collapsible">{{event.title}}</button>
       <div class="content">
@@ -38,7 +38,9 @@ export default {
   },
   methods: {
     search() {
-      this.$store.dispatch("search", this.searchTerm);
+      this.$store.dispatch("search", this.searchTerm).catch(error => {
+        this.$toasted.show('Det uppståd ett fel' + error)
+      });
     }
   }
 };
@@ -102,6 +104,4 @@ h1 {
   display: inline-block;
   font-size: 20px;
 }
-
-
 </style>

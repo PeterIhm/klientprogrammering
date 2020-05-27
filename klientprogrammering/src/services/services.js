@@ -1,7 +1,8 @@
 import { getPosition } from '../components/geolocation.js'
+
 function getEvents(url) {
     return fetch(url)
-        .then(resp => { 
+        .then(resp => {
             if (!resp.ok) {
                 throw new Error(resp.statusText)
             }
@@ -23,14 +24,14 @@ function getEvents(url) {
             }
             return list
         }
-    /*json.map(h => h.handelse)*/)
-}
+
+    )}
 
 async function getEventsNearby() {
 
     let pos = await getPosition()
 
-let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&app=whatsthebuzzsve`
+    let url = `https://brottsplatskartan.se/api/eventsNearby?lat=${pos.coords.latitude}&lng=${pos.coords.longitude}&app=whatsthebuzzsve`
     console.log(url)
     return getEvents(url)
 
@@ -43,7 +44,7 @@ function createURLArea(query) {
 
 function createURLLocation(query) {
     let locationQuery = encodeURIComponent(query),
-    url = 'https://brottsplatskartan.se/api/events/?location=' + locationQuery + '&app=whatsthebuzzsve'
+        url = 'https://brottsplatskartan.se/api/events/?location=' + locationQuery + '&app=whatsthebuzzsve'
     return getEvents(url)
 }
 
