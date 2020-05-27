@@ -3,9 +3,7 @@
     <div class="header">
       <h1>What's the buzz hos dig?</h1>
       <h3>Här visas de senaste brotten som begåtts i närheten av din plats</h3>
-      <button
-        onclick="navigator.geolocation.getCurrentPosition(pos => alert(pos.coords.longitude + ' ' + pos.coords.latitude))"
-      >Update</button>
+      <button class="update-button" v-on:click="nearbyEvents" title="Uppdatera"></button>
     </div>
     <div id="eventlist">
       <event-list></event-list>
@@ -17,19 +15,15 @@
 export default {
   mounted() {
     this.$store.dispatch("eventsNearby").catch(error => {
-      this.$toasted.show("Det uppstod ett fel" + error)
-    }
-    )},
+      this.$toasted.show("Det uppståd ett fel" + error);
+    });
+  },
   methods: {
     nearbyEvents() {
-      this.$store.dispatch("eventsNearby").catch(error => {
-      this.$toasted.show("Det uppståd ett fel" + error)
+      this.$store.dispatch("eventsNearby");
     }
-
-      )}
   }
-
-
+};
 </script>
 
 <style>
@@ -58,8 +52,8 @@ h3 {
 
 .update-button {
   background: white url("../assets/update-button.png") no-repeat;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-size: cover;
 }
 </style>

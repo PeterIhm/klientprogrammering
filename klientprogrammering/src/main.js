@@ -8,12 +8,14 @@ import Toasted from 'vue-toasted'
 
 Vue.config.productionTip = false
 Vue.use(Toasted)
+Vue.use(router)
+
 
 router.beforeEach((to, from, next) => {
 
-next()
-to, from = this.$store.dispatch('defaultState')
-console.log(to, from, next)
+  next()
+  
+  console.log(to, from, next)
 
 })
 
