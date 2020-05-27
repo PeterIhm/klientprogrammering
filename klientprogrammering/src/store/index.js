@@ -10,21 +10,27 @@ export default new Vuex.Store({
   },
   mutations: {
     addEvents(state, newEvents) {
-    state.events = newEvents
-    }
+      state.events = newEvents
+    },
+    clearEvents(state) {
+      state.events = [0]
+    } 
   },
   actions: {
     search(context, searchTerm) {
-      BrottsplatsService.search(searchTerm).then(data => {
-        context.commit('addEvents', data) 
+      return BrottsplatsService.search(searchTerm).then(data => {
+        context.commit('addEvents', data)
       });
     },
     eventsNearby(context) {
-      BrottsplatsService.getEventsNearby().then(data => context.commit('addEvents', data))
+      return BrottsplatsService.getEventsNearby().then(data => context.commit('addEvents', data))
     },
     eventsByArea(context, selected) {
-      BrottsplatsService.eventsByArea(selected).then(data => context.commit('addEvents', data))
-    }
+      return BrottsplatsService.eventsByArea(selected).then(data => context.commit('addEvents', data))
+    },
+    defaultState(context) {
+      context.commit('clearEvents')
+    } 
   },
   modules: {
   }

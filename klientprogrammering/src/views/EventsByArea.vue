@@ -73,7 +73,9 @@ export default {
   },
   methods: {
     getSelected() {
-      this.$store.dispatch("eventsByArea", this.selected);
+      this.$store.dispatch("eventsByArea", this.selected).catch(error => {
+        this.$toasted.show("Det uppståd ett fel" + error);
+      });
     }
   }
 };

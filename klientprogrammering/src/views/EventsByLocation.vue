@@ -60,7 +60,9 @@ export default {
   },
   methods: {
     search() {
-      this.$store.dispatch("search", this.searchTerm);
+      this.$store.dispatch("search", this.searchTerm).catch(error => {
+        this.$toasted.show('Det uppståd ett fel' + error)
+      });
     }
   }
 };

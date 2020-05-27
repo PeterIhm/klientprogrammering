@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 import EventsByLocation from '@/views/EventsByLocation.vue'
 import chai from 'chai'
 import spies from 'chai-spies'
-import { mutations } from '@/store'
 
 
 chai.use(spies)
@@ -29,6 +28,12 @@ describe('EventsByLocation.vue', () => {
     it('Calls store action search when button is clicked', () => {
         const wrapper = shallowMount(EventsByLocation, { store, localVue })
         wrapper.find('button').trigger('click')
+        expect(actions.search).to.have.been.called()
+    })
+
+    it('Calls store action search when enter is pressed', () => {
+        const wrapper = shallowMount(EventsByLocation, { store, localVue })
+        wrapper.find('input').trigger('keyup.enter')
         expect(actions.search).to.have.been.called()
     })
 })
