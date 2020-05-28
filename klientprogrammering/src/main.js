@@ -10,23 +10,13 @@ Vue.config.productionTip = false
 Vue.use(Toasted)
 
 router.beforeEach((to, from, next) => {
-
-next()
-to, from = this.$store.dispatch('defaultState')
-console.log(to, from, next)
-
+  store.dispatch("defaultState")
+  next()
 })
+Vue.component('event-list', eventlist)
 
 new Vue({
   router,
   store,
-  app,
   render: h => h(App),
 }).$mount('#app')
-
-
-Vue.component('event-list', eventlist)
-
-let app = new Vue({
-  el: '#eventlist'
-})

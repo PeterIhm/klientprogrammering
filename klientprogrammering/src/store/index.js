@@ -13,7 +13,7 @@ export default new Vuex.Store({
       state.events = newEvents
     },
     clearEvents(state) {
-      state.events = [0]
+      state.events = []
     } 
   },
   actions: {
