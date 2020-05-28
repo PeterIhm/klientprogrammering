@@ -15,3 +15,6 @@ Vill du köra unittester?
 Skriv följande i kommandotolken:
 
 npm run test:unit
+
+Hoppas du kommer att tycka om What's the Buzz Sverige!
+Happy searching!
