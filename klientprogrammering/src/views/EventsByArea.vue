@@ -1,9 +1,8 @@
 <template>
   <div class="eventsbyarea">
-    <h1>What's the Buzz i en viss län</h1>
     <div class="search-box" id="dropdownlist">
       <select v-model="selected" @input="getSelected" class="search-dropdown">
-        <option disabled value>Välj län</option>
+        <option disabled value>What's the Buzz i en viss län</option>
         <option>Blekinge län</option>
         <option>Dalarnas län</option>
         <option>Gotlands län</option>
@@ -60,12 +59,11 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 2em;
+  font-size: 1em;
   text-shadow: 3px 3px #0000002b;
   background-color: transparent;
   color: rgb(255, 255, 255);
 
-  margin-top: 1em;
   text-align: center;
 }
 

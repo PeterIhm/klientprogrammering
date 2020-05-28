@@ -37,12 +37,11 @@ export default {
 
 <style>
 h1 {
-  font-size: 2em;
+  font-size: 1em;
   text-shadow: 3px 3px #0000002b;
   background-color: transparent;
   color: rgb(255, 255, 255);
 
-  margin-top: 1em;
   text-align: center;
 }
 
@@ -51,7 +50,6 @@ h3 {
   background-color: transparent;
   color: rgb(255, 255, 255);
 
-  margin-top: 1em;
   text-align: center;
 }
 
