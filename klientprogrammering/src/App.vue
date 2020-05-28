@@ -1,43 +1,51 @@
 <template>
-<main>  
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/src/all.min.css">
-  <div id="app">
-    <div id="nav">
-      <router-link to="/"><button id="button" class="button"><i class="fa fa-home" style="font-size:4em;"></i></button></router-link>
-      <router-link to="/eventsnearby"><button id="button" class="button"><i class="fa fa-map-marker" style="font-size:4em;"></i></button></router-link>
-      <router-link to="/eventsbylocation"><button id="button" class="button"><i class="fa fa-building" style="font-size:4em;"></i></button></router-link>
-      <router-link to="/eventsbyarea"><button id="button" class="button"><i class="fa fa-globe" style="font-size:4em;"></i></button></router-link>
-      <router-link to="/about"><button id="button" class="button"><i class="fa fa-info-circle" style="font-size:4em;"></i></button></router-link>
+  <main>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/src/all.min.css" />
+    <div id="app">
+      <div id="nav">
+        <router-link to="/">
+          <button id="button" class="button">
+            <i class="fa fa-home" style="font-size:4em;"></i>
+          </button>
+        </router-link>
+        <router-link to="/eventsnearby">
+          <button id="button" class="button">
+            <i class="fa fa-map-marker" style="font-size:4em;"></i>
+          </button>
+        </router-link>
+        <router-link to="/eventsbylocation">
+          <button id="button" class="button">
+            <i class="fa fa-building" style="font-size:4em;"></i>
+          </button>
+        </router-link>
+        <router-link to="/eventsbyarea">
+          <button id="button" class="button">
+            <i class="fa fa-globe" style="font-size:4em;"></i>
+          </button>
+        </router-link>
+        <router-link to="/about">
+          <button id="button" class="button">
+            <i class="fa fa-info-circle" style="font-size:4em;"></i>
+          </button>
+        </router-link>
+      </div>
+      <router-view />
     </div>
-    <router-view/>
-  </div>
 
-  <div class="background">
-
-  </div>
+    <div class="background"></div>
   </main>
 </template>
 
 <script>
-
-
-
-/*
-export default {
-  name: 'App',
-  data(){
-    return{
-      api_key: 'temp'
-    }
-  }
-}*/
 </script>
 
 <style>
-
-h1{
+h1 {
   background-color: #ceeaff;
 }
 
@@ -48,7 +56,7 @@ h1{
 }
 
 body {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   /* background-image: url("./assets/City.jpg");*/
   background-size: cover;
 
@@ -66,7 +74,7 @@ main {
 
 /*Navigation*/
 
-#nav{
+#nav {
   background-color: #262626;
   padding-left: 1em;
   float: left;
@@ -76,23 +84,20 @@ main {
   display: flex;
 
   justify-content: center;
-  
 }
 
-#nav button{
+#nav button {
   color: white;
-  
-  margin: 1em 2em 1em 0;  
-  background-color:#262626;
-  background-repeat:no-repeat;
+
+  margin: 1em 2em 1em 0;
+  background-color: #262626;
+  background-repeat: no-repeat;
   border: none;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-#nav button:hover{
+#nav button:hover {
   background: transparent; /*#00ff99*/ /*00ff99*/
   color: #4885cc; /*5aa6fe*/
 }
-
-
 </style>

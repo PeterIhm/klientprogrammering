@@ -2,7 +2,6 @@
   <div class="eventsnearby">
     <div class="header">
       <h1>What's the buzz hos dig?</h1>
-      <h3>Här visas de senaste brotten som begåtts i närheten av din plats</h3>
       <button class="update-button" v-on:click="nearbyEvents" title="Uppdatera"></button>
     </div>
     <div id="eventlist">
