@@ -21,18 +21,6 @@
 </template>
 
 <script>
-
-
-
-/*
-export default {
-  name: 'App',
-  data(){
-    return{
-      api_key: 'temp'
-    }
-  }
-}*/
 </script>
 
 <style>
@@ -74,7 +62,6 @@ main {
   width: 100%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
   text-align: center; /* If you want the text to be centered */
   display: flex;
-
   justify-content: center;
   
 }

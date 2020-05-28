@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-       
+    
     <h1>What's the Buzz Sverige</h1><br>
     <p>Är du orolig för ditt liv varje gång du går utanför dörren? Gör ovissheten dig till en fånge i ditt egna hem?
       Eller är du bara nyfiken på din omgivning och vill veta vad som händer i din närhet? Då är det här appen för dig!

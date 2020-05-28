@@ -1,13 +1,12 @@
 <template>
   <div class="eventsbylocation">
-        <h1>What's the Buzz i en viss plats eller stadsdel</h1>
     <div class="search-box">
       <input
         class="search-bar"
         type="text"
         v-model="searchTerm"
         @keyup.enter="search"
-        placeholder="Sök stad..."
+        placeholder="What's the Buzz i en viss plats eller stadsdel"
       />
       <button class="search-button" type="button" @click="search">
         <i class="fa fa-search"></i>
@@ -52,7 +51,6 @@ h1 {
   background-color: transparent;
   color: rgb(255, 255, 255);
 
-  margin-top: 1em;
   text-align: center;
 }
 

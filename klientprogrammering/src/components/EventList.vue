@@ -3,24 +3,23 @@
       <ul>
         <li v-for="event in $store.state.events" :key="event.id">
           <div>
-            <button class="sibling-hover">
-              <p>{{event.title}}</p>
-            </button>
+            <input type="checkbox" id="toggle" class="sibling-hover">    
+            <p>{{event.title}}</p>
             <div class="sibling-highlight">
-              <br />
+              <br>
               <div class="content">
                 <p>{{event.info}}</p>
               </div>
-              <br />
+              <br>
               <div class="content">
                 <p>{{event.content}}</p>
               </div>
-              <br />
-              <br />
+              <br>
+              <br>
               <div class="content">
                 <p>{{event.location}}</p>
               </div>
-              <br />
+              <br>
               <div class="date">
                 <p>{{event.date}}</p>
               </div>
@@ -45,12 +44,16 @@
   font-size: 1em;
 }
 
+p{
+  color: white;
+}
+
 .sibling-hover ~ .sibling-highlight {
   display: none;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.sibling-hover:hover ~ .sibling-highlight {
+.sibling-hover:checked ~ .sibling-highlight {
   display: block;
   color: white;
 }
@@ -59,14 +62,14 @@
   margin-left: 0.8em;
   margin-right: 0.5em;
   text-align: left;
-  text-shadow: 2px 2px #0000005b;
+  text-shadow: 2px 2px #ffffff;
 }
 
 .date >>> p {
   margin-left: 0.8em;
   margin-right: 0.5em;
   text-align: right;
-  text-shadow: 2px 2px #0000005b;
+  text-shadow: 2px 2px #ffffff;
 }
 
 @media only screen and (min-width : 1025px) {
