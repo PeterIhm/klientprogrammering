@@ -33,8 +33,12 @@ export default {
   },
   methods: {
     search() {
-      this.$store.dispatch("search", this.searchTerm).catch(error => {
-        this.$toasted.show('Det uppstod ett fel' + error)
+      this.$store.dispatch("search", this.searchTerm).catch(() => {
+        this.$toasted.show("Det har uppstått ett fel", {
+        theme: "toasted-primary",
+        position: "bottom-center",
+        duration: 5000
+      });
       });
     }
   }

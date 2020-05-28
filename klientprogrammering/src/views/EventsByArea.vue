@@ -46,8 +46,12 @@ export default {
   },
   methods: {
     getSelected() {
-      this.$store.dispatch("eventsByArea", this.selected).catch(error => {
-        this.$toasted.show("Det uppstod ett fel" + error);
+      this.$store.dispatch("eventsByArea", this.selected).catch(() => {
+        this.$toasted.show("Det har uppstått ett fel", {
+        theme: "toasted-primary",
+        position: "bottom-center",
+        duration: 5000
+      });
       });
     }
   }
