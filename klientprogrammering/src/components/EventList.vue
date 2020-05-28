@@ -33,8 +33,15 @@
 <style>
 /*.text*/
 
-.sibling-hover,
-#parent {
+.collapsibles{
+  margin: auto;
+}
+
+.collapsibles ul{
+  list-style-type: none;
+}
+
+.sibling-hover,#parent {
   width: 100%;
   border: none;
   color: white;
@@ -72,10 +79,10 @@ p{
   text-shadow: 2px 2px #ffffff;
 }
 
-@media only screen and (min-width : 1025px) {
-.sibling-hover:active {
-  display: block;
-  color: white;
+@media only screen and (min-width: 600px) {
+  .collapsibles{
+    margin-left: 20%;
+    margin-right: 20%;
   }
 }
 </style>

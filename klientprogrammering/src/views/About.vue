@@ -89,5 +89,12 @@
 .text .item p {
   flex: 5;
 }
+
+@media only screen and (min-width: 600px) {
+  .text{
+    margin-left: 30%;
+    margin-right: 30%;
+  }
+}
 </style>
 

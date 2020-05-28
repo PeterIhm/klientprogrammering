@@ -28,8 +28,14 @@ p{
 }
 
 .end p {
- 
  text-align: center;
  font-size: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  *{
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 }
 </style>
