@@ -47,7 +47,7 @@ export default {
   methods: {
     getSelected() {
       this.$store.dispatch("eventsByArea", this.selected).catch(error => {
-        this.$toasted.show("Det uppståd ett fel" + error);
+        this.$toasted.show("Det uppstod ett fel" + error);
       });
     }
   }

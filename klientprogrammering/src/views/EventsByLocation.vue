@@ -34,7 +34,7 @@ export default {
   methods: {
     search() {
       this.$store.dispatch("search", this.searchTerm).catch(error => {
-        this.$toasted.show('Det uppståd ett fel' + error)
+        this.$toasted.show('Det uppstod ett fel' + error)
       });
     }
   }
