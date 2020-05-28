@@ -52,7 +52,6 @@ export default {
         position: "bottom-center",
         duration: 5000
       });
-
       });
     }
   }
