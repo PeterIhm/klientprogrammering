@@ -13,10 +13,11 @@
         till appen kom ifrån tanken att man kan känna sig tryggare om man
         vet vad som pågår i ens närhet. Eller så kanske man bara är nyfiken?
       </p>
-      <br>
+      <br />
       <p>
         Med What's the Buzz Sverige kan man enkelt kolla upp vad som händer
-        runt om i Sverige med bara några knapptryck!</p>
+        runt om i Sverige med bara några knapptryck!
+      </p>
     </div>
     <br />
 
@@ -91,7 +92,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .text{
+  .text {
     margin-left: 30%;
     margin-right: 30%;
   }

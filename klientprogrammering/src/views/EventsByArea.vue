@@ -27,7 +27,7 @@
       </select>
     </div>
     <div id="eventlist">
-    <event-list></event-list>
+      <event-list></event-list>
     </div>
   </div>
 </template>
@@ -38,19 +38,21 @@ import vSelect from "vue-select";
 Vue.component("v-select", vSelect);
 import "vue-select/dist/vue-select.css";
 export default {
+  /* data returns the chosen län from the dropdown menu as a string */
   data() {
     return {
       selected: ""
     };
   },
   methods: {
+    /* Calls upon services through store, includes errorhandling */
     getSelected() {
       this.$store.dispatch("eventsByArea", this.selected).catch(() => {
         this.$toasted.show("Det har uppstått ett fel", {
-        theme: "toasted-primary",
-        position: "bottom-center",
-        duration: 5000
-      });
+          theme: "toasted-primary",
+          position: "bottom-center",
+          duration: 5000
+        });
       });
     }
   }

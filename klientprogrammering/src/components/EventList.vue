@@ -1,47 +1,48 @@
+<!-- This component is present in the three endpoint vue's to write out the events fetched from services (through store) -->
+<!-- Through the checkbox option a user can toggle open the event and close it again -->
 <template>
-    <div class="collapsibles">
-      <ul>
-        <li v-for="event in $store.state.events" :key="event.id">
-          <div>
-            <input type="checkbox" id="toggle" class="sibling-hover">    
-            <p>{{event.title}}</p>
-            <div class="sibling-highlight">
-              <br>
-              <div class="content">
-                <p>{{event.info}}</p>
-              </div>
-              <br>
-              <div class="content">
-                <p>{{event.content}}</p>
-              </div>
-              <br>
-              <br>
-              <div class="content">
-                <p>{{event.location}}</p>
-              </div>
-              <br>
-              <div class="date">
-                <p>{{event.date}}</p>
-              </div>
+  <div class="collapsibles">
+    <ul>
+      <li v-for="event in $store.state.events" :key="event.id">
+        <div>
+          <input type="checkbox" id="toggle" class="sibling-hover" />
+          <p>{{event.title}}</p>
+          <div class="sibling-highlight">
+            <br />
+            <div class="content">
+              <p>{{event.info}}</p>
+            </div>
+            <br />
+            <div class="content">
+              <p>{{event.content}}</p>
+            </div>
+            <br />
+            <br />
+            <div class="content">
+              <p>{{event.location}}</p>
+            </div>
+            <br />
+            <div class="date">
+              <p>{{event.date}}</p>
             </div>
           </div>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style>
-/*.text*/
-
-.collapsibles{
+.collapsibles {
   margin: auto;
 }
 
-.collapsibles ul{
+.collapsibles ul {
   list-style-type: none;
 }
 
-.sibling-hover,#parent {
+.sibling-hover,
+#parent {
   width: 100%;
   border: none;
   color: white;
@@ -51,7 +52,7 @@
   font-size: 1em;
 }
 
-p{
+p {
   color: white;
 }
 
@@ -80,7 +81,7 @@ p{
 }
 
 @media only screen and (min-width: 600px) {
-  .collapsibles{
+  .collapsibles {
     margin-left: 20%;
     margin-right: 20%;
   }

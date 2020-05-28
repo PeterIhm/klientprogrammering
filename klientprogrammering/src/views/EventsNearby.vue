@@ -13,6 +13,7 @@
 <script>
 export default {
   mounted() {
+    /* Calls upon services through store, includes errorhandling */
     this.$store.dispatch("eventsNearby").catch(() => {
       this.$toasted.show("Vi kunde tyvärr inte hitta din plats", {
         theme: "toasted-primary",
@@ -22,16 +23,17 @@ export default {
     });
   },
   methods: {
+    /* Calls upon services through store, includes errorhandling */
     nearbyEvents: function() {
       this.$store.dispatch("eventsNearby").catch(() => {
-      this.$toasted.show("Vi kunde tyvärr inte hitta din plats", {
-        theme: "toasted-primary",
-        position: "bottom-center",
-        duration: 5000
+        this.$toasted.show("Vi kunde tyvärr inte hitta din plats", {
+          theme: "toasted-primary",
+          position: "bottom-center",
+          duration: 5000
+        });
       });
-    })
+    }
   }
-}
 };
 </script>
 

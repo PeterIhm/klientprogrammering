@@ -12,9 +12,10 @@ export default new Vuex.Store({
     addEvents(state, newEvents) {
       state.events = newEvents
     },
+    /* this mutation clears the events array, so a user gets a clean page when the navigate to another view */
     clearEvents(state) {
       state.events = []
-    } 
+    }
   },
   actions: {
     search(context, searchTerm) {
@@ -28,9 +29,10 @@ export default new Vuex.Store({
     eventsByArea(context, selected) {
       return BrottsplatsService.eventsByArea(selected).then(data => context.commit('addEvents', data))
     },
+     /* this action calls upon the clearEvents mutation through navigation guards - see main.js */
     defaultState(context) {
       context.commit('clearEvents')
-    } 
+    }
   },
   modules: {
   }

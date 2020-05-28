@@ -9,6 +9,7 @@ import Toasted from 'vue-toasted'
 Vue.config.productionTip = false
 Vue.use(Toasted)
 
+/* changes the apps state to 'default' upon navigation so the user doesn't see old search results */
 router.beforeEach((to, from, next) => {
   store.dispatch("defaultState")
   next()

@@ -14,30 +14,31 @@
     </div>
 
     <h1>{{searchTerm}}</h1>
-    <br>
+    <br />
 
     <div id="eventlist">
-    <event-list></event-list>
+      <event-list></event-list>
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
+    /* data returns the searchterm from the searchbar as a string */
   data() {
     return {
       searchTerm: ""
     };
   },
   methods: {
+    /* Calls upon services through store, includes errorhandling */
     search() {
       this.$store.dispatch("search", this.searchTerm).catch(() => {
         this.$toasted.show("Det har uppstått ett fel", {
-        theme: "toasted-primary",
-        position: "bottom-center",
-        duration: 5000
-      });
+          theme: "toasted-primary",
+          position: "bottom-center",
+          duration: 5000
+        });
       });
     }
   }
